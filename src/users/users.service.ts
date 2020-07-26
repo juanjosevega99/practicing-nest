@@ -8,6 +8,6 @@ import { CreateUserDTO } from './dto/create-user.dto'
 @Injectable()
 export class UsersService {
 
-  constructor(@InjectModel('User') private userModel: Model<User>) {}
+  // constructor(@InjectModel('User') private userModel: Model<User>) {}
 
 }
