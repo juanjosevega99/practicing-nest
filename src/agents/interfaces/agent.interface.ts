@@ -2,6 +2,6 @@ import { Document } from 'mongoose'
 
 export interface Agent extends Document {
   name: string
-  availability: string
-  problemId: number
+  availability: boolean
+  problemId: object
 }
