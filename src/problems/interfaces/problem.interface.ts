@@ -1,6 +1,6 @@
 import { Document } from 'mongoose'
 
-export interface User extends Document {
+export interface Problem extends Document {
   userId: object,
   agentId: object,
   description: string

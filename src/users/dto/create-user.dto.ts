@@ -1,4 +1,4 @@
 export class CreateUserDTO {
   name: string
-  problem: string
+  problem: object
 }
