@@ -25,5 +25,14 @@ export class ProblemsController {
       problemSolved
     })
   }
+  
+  @Get('/list')
+  async listProblems(@Res() res) {
+    const problems = await this.problemsService.listProblems()
+    return res.status(HttpStatus.OK).json({
+      message: 'List of Problems',
+      problems
+    })
+  }
 
 }

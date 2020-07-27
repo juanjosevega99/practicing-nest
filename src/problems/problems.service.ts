@@ -28,6 +28,11 @@ export class ProblemsService {
     return problem
   }
 
+  async listProblems(): Promise<Problem[]> {
+    const problems = await this.problemModel.find()
+    return problems
+  }
+
   async agentToProblem(problemID: string, agentAvailable: object): Promise<Problem> {
     const problemAssigned = await this.problemModel.findOneAndUpdate({ _id: problemID }, { $set: { agentId: agentAvailable } })
     return problemAssigned
