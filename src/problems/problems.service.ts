@@ -11,7 +11,10 @@ import { AgentsService } from 'src/agents/agents.service';
 @Injectable()
 export class ProblemsService {
 
-  constructor(@InjectModel('Problem') private problemModel: Model<Problem>, private agentsService: AgentsService) {}
+  constructor(
+    @InjectModel('Problem')
+    private problemModel: Model<Problem>,
+    @InjectModel('Agent') private agentsService: AgentsService) {}
 
   async createProblem(createProblemDTO: CreateProblemDTO): Promise<Problem> {
     const problem = new this.problemModel(createProblemDTO)
