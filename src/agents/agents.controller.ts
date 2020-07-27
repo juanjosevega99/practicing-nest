@@ -8,13 +8,13 @@ export class AgentsController {
 
   constructor(private agentsService: AgentsService) {}
 
-  @Get('/')
-  async assignProblem(@Res() res) {
-    const problemAssign = await this.agentsService.assignProblem()
-    return res.status(HttpStatus.CREATED).json({
-      message: 'Problem Successfully Assigned',
-      problemAssign
-    })
-  }
+  // @Get('/')
+  // async assignProblem(@Res() res) {
+  //   const problemAssign = await this.agentsService.assignProblem()
+  //   return res.status(HttpStatus.CREATED).json({
+  //     message: 'Problem Successfully Assigned',
+  //     problemAssign
+  //   })
+  // }
 
 }

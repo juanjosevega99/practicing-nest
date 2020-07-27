@@ -4,6 +4,9 @@ import { ProblemSchema } from './schemas/problem.schema';
 import { ProblemsController } from './problems.controller';
 import { ProblemsService } from './problems.service';
 
+import { AgentsModule } from 'src/agents/agents.module';
+import { AgentsService } from 'src/agents/agents.service';
+
 @Module({
   imports: [
     MongooseModule.forFeature([
@@ -11,6 +14,7 @@ import { ProblemsService } from './problems.service';
     ])
   ],
   controllers: [ProblemsController],
-  providers: [ProblemsService]
+  providers: [ProblemsService],
+  // exports: [ProblemsService]
 })
 export class ProblemsModule {}
