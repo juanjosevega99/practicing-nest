@@ -17,6 +17,6 @@ import { AgentSchema } from 'src/agents/schemas/agent.schema';
     ])
   ],
   controllers: [ProblemsController],
-  providers: [ProblemsService, AgentsService],
+  providers: [ProblemsService],
 })
 export class ProblemsModule {}

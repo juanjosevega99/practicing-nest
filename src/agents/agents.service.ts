@@ -17,10 +17,6 @@ export class AgentsService {
   async assignProblem(problemId: object): Promise<Agent> {
     const freeAgent  = await this.agentModel.findOneAndUpdate({ availability: true }, { $set: { availability: false } })
     const agentAvailable = freeAgent._id
-
-    // await this.problemsService.agentToProblem(problemId, agentAvailable)
-    // await this.agentModel.findOneAndUpdate({ _id: agentId }, { $set: { availability: true } })
-    // await this.agentsModule.
     return freeAgent
   }
 
