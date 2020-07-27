@@ -6,12 +6,14 @@ import { ProblemsService } from './problems.service';
 
 import { AgentsModule } from 'src/agents/agents.module';
 import { AgentsService } from 'src/agents/agents.service';
+import { AgentSchema } from 'src/agents/schemas/agent.schema';
 
 @Module({
   imports: [
     AgentsModule,
     MongooseModule.forFeature([
-      { name: 'Problem', schema: ProblemSchema }
+      { name: 'Problem', schema: ProblemSchema },
+      { name: 'Agent', schema: AgentSchema }
     ])
   ],
   controllers: [ProblemsController],
