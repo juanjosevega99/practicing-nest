@@ -9,12 +9,12 @@ import { AgentsService } from 'src/agents/agents.service';
 
 @Module({
   imports: [
+    AgentsModule,
     MongooseModule.forFeature([
       { name: 'Problem', schema: ProblemSchema }
     ])
   ],
   controllers: [ProblemsController],
-  providers: [ProblemsService],
-  // exports: [ProblemsService]
+  providers: [ProblemsService, AgentsService],
 })
 export class ProblemsModule {}

@@ -6,12 +6,12 @@ import { Problem } from './interfaces/problem.interface'
 import { CreateProblemDTO } from './dto/create-problem.dto';
 
 import { AgentsService } from 'src/agents/agents.service';
-// , private agentsService: AgentsService
+// private agentsService: AgentsService
 
 @Injectable()
 export class ProblemsService {
 
-  constructor(@InjectModel('Problem') private problemModel: Model<Problem>) {}
+  constructor(@InjectModel('Problem') private problemModel: Model<Problem>, private agentsService: AgentsService) {}
 
   async createProblem(createProblemDTO: CreateProblemDTO): Promise<Problem> {
     const problem = new this.problemModel(createProblemDTO)
