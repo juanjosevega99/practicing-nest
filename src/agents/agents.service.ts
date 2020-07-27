@@ -6,18 +6,15 @@ import { Agent } from './interfaces/agent.interface'
 import { CreateAgentDTO } from './dto/create-agent.dto';
 
 import { ProblemsService } from 'src/problems/problems.service';
-// import { Problem } from 'src/problems/interfaces/problem.interface'
-// import { ProblemsModule } from 'src/problems/problems.module'
-
-// import { AgentsModule } from 'src/agents/agents.module'
-// , private problemsService: ProblemsService
 
 @Injectable()
 export class AgentsService {
 
-  constructor(@InjectModel('Agent') private agentModel: Model<Agent>) {}
+  constructor(
+    @InjectModel('Agent') private agentModel: Model<Agent>,
+    @InjectModel('Problem') private problemsService: ProblemsService) {}
 
-  async assignProblem(problemId: string): Promise<Agent> {
+  async assignProblem(problemId: object): Promise<Agent> {
     const freeAgent  = await this.agentModel.findOneAndUpdate({ availability: true }, { $set: { availability: false } })
     const agentAvailable = freeAgent._id
 
@@ -28,11 +25,8 @@ export class AgentsService {
   }
 
   async availabilityAgent(agentId: object): Promise<Agent> {
-    await this.agentModel.findOneAndUpdate({ _id: agentId }, { $set: { availability: true } })
-
-    // await this.agentModel.findOneAndUpdate({ _id: agentId }, { $set: { availability: true } })
-
-    return 
+    const xd = await this.agentModel.findOneAndUpdate({ _id: agentId }, { $set: { availability: true } })
+    return xd
   }
 
 }
