@@ -6,7 +6,6 @@ import { Problem } from './interfaces/problem.interface'
 import { CreateProblemDTO } from './dto/create-problem.dto';
 
 import { Agent } from '../agents/interfaces/agent.interface'
-import { AgentsService } from 'src/agents/agents.service';
 
 @Injectable()
 export class ProblemsService {
